@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from main import views  #TODO importando las vistas de main para hacer una llamda de las templates
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')),
+    path('', views.home, name=home),  #todo Dandole nombre a la ruta home
 ]
