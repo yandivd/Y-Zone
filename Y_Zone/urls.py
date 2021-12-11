@@ -19,5 +19,5 @@ from main import views  #TODO importando las vistas de main para hacer una llamd
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name=home),  #todo Dandole nombre a la ruta home
+    path('', include('main.urls')),  #se pone así para q llame a la urls.py de la app main
 ]
