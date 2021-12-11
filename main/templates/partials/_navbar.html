@@ -1,21 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="{% url 'home' %}"><b>Y-Zone</b></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Noticias</a>
+                    <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-newspaper"></i> Noticias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tienda</a>
+                    <a class="nav-link active" href="#"><i class="bi bi-bag"></i> Tienda</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">LogOut</a>
+                <li class="nav-item active">
+                    <a class="nav-link active" href="#"><i class="bi bi-door-closed"></i> LogOut</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Otras Cosas
             </a>
