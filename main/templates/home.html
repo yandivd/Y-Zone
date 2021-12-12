@@ -1,6 +1,29 @@
 {% extends 'layout.html' %} {% block content %}
 
 <div class="b-example-divider"></div>
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="row">
+
+
+
+
+
+
+        Aqui iria el home para cuando el usuario ya este autenticado
+        <!-- Aqui iria el home para cuando el usuario ya este autenticado -->
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+{% else %}
 
 <div class="container my-3 mx-auto ">
     <div class="row p-4  pb-5 pe-lg-0 pt-5 align-items-center rounded-3 border shadow-lg" id="resividor-box">
@@ -87,6 +110,7 @@
 
     </div>
 </div>
+{% endif %}
 
 <div class="b-example-divider"></div>
 
