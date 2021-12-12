@@ -12,8 +12,13 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <!---Esto es para comprobar si se logea o no --->
     <!-- {% if user.is_authenticated %}
+=======
+<!---Esto es para comprobar si se logea o no --->
+{% if user.is_authenticated %}
+>>>>>>> cb88e528c211c3b6446d7de18589e21e5adfccef
 <p>Bienvenido {{user.username}}</p>
     <li>
       <a href="{% url 'logout' %}">Cerrar Cesion</a>
@@ -23,11 +28,15 @@
       <li>
         <a href="{% url 'login' %}">Iniciar Sesion</a>
       </li>
+<<<<<<< HEAD
 {% endif %} -->
 
     <!-- MEN YA ESO LO HICE. REVISA el HOME. 
          SI EL USUARIO NO SE HA LOGUEADO LE MUESTRO LA PAGINA DE REGISTRO O LA DE LOGIN DEPENDE.
 Y SI YA ESTA LOGUEADO POS LE EMPIEZO A MOSTRAR CONTENIDO -->
+=======
+{% endif %}
+>>>>>>> cb88e528c211c3b6446d7de18589e21e5adfccef
 
     {% include 'partials/_navbar.html' %}
 
