@@ -2,6 +2,8 @@
     background-color: red;
 }
 
+.registro-div {}
+
 #resividor {
     animation: animation-r 1s ease;
 }
@@ -17,6 +19,7 @@
 
 #resividor-box {
     animation: animation-box 2.2s ease;
+    background-image: url(../img/1.png);
 }
 
 @keyframes animation-box {
@@ -27,3 +30,19 @@
         transform: translateX(0);
     }
 }
+
+#nb {
+    animation: animation-nb 2.2s ease;
+}
+
+@keyframes animation-nb {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+/****************************************************/
