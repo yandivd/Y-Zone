@@ -10,9 +10,12 @@
 
 
 
-        Aqui iria el home para cuando el usuario ya este autenticado
+        Aqui iria el contenido de home para cuando el usuario ya este autenticado!
         <!-- Aqui iria el home para cuando el usuario ya este autenticado -->
-
+        <p>Bienvenido {{user.username}}</p>
+        <li>
+            <a href="{% url 'logout' %}">Cerrar Cesion</a>
+        </li>
 
 
 
