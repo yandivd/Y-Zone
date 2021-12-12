@@ -9,3 +9,10 @@ def home(request):
 
 
     return render(request, 'home.html')#! Renderizando el home 
+
+def tienda(request):
+
+    return HttpResponse('Tienda')
+
+#def login(request):
+#    return render(request,'registration/login.html')
