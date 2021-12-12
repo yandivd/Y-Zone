@@ -3,7 +3,9 @@
 <div class="b-example-divider"></div>
 
 <div class="container my-3 mx-auto ">
-    <div class="row p-4  pb-5 pe-lg-0 pt-5 align-items-center rounded-3 border shadow-lg">
+    <div class="row p-4  pb-5 pe-lg-0 pt-5 align-items-center rounded-3 border shadow-lg" id="resividor-box">
+
+
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
             <h1 class="display-4 fw-bold lh-1">Bienvenido a</h1>
             <h1 class="display-4 fw-bold lh-1 text-success">Y-Zone</h1>
@@ -12,23 +14,33 @@
                 rerum animi hic quis aspernatur ipsa enim, necessitatibus nam magni, eveniet velit officiis.
             </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                <button type="button" class="btn btn-success btn-lg px-4 me-md-2 fw-bold">Primary</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+
+                <button type="button" class="btn btn-success  px-4 me-md-2 fw-bold">Saber más</button>
+                <button type="button" class="btn btn-outline-secondary  px-4">Ir a inicio de sesión</button>
+
             </div>
         </div>
+
+
         <div class="col-lg-4 m-auto">
-            <div class="card p-4 shadow-lg" style="width: 18rem;">
-                <h2>Inicio de sesión:</h2>
+            <div class="card p-4 shadow-lg" style="width: 18rem;" id="resividor">
+                <h2>Registro:</h2>
+                <!--? formulario de registro -->
                 <form action="/login" method="POST" autocomplete="off">
-                    <div class="form-group form-card">
-                        <input type="text" name="user" class="form-control mx-auto" placeholder="Usuario" aria-describedby="helpId">
-                        <input type="password" name="pass" class="form-control mx-auto" placeholder="Contraseña" aria-describedby="helpId">
-                        <input type="submit" value="Iniciar Sesión" class="btn bg-principal  btn-lg btn-block">
+
+                    <div class="form-group form-card text-center">
+                        <input type="text" name="user" class="form-control mx-auto my-1" placeholder="Usuario" aria-describedby="helpId" required>
+                        <input type="email" name="email" class="form-control mx-auto my-1" placeholder="Correo electrónico" aria-describedby="helpId" required>
+                        <input type="password" name="pass" class="form-control mx-auto my-1" placeholder="Contraseña" aria-describedby="helpId" required>
+                        <input type="submit" value="Registrarme" class="btn form-control mx-auto my-1 btn-success mt-1 btn-block fw-bold">
                     </div>
+
                 </form>
-                <a role="button" href="/" name="" id="" class="btn bg-secundario btn-lg btn-block">Cancelar</a>
+                <a role="button" href="/" name="" id="" class="btn btn-outline fw-bold btn-block">Cancelar</a>
             </div>
         </div>
+
+
     </div>
 </div>
 

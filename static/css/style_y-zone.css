@@ -1,0 +1,29 @@
+.f {
+    background-color: red;
+}
+
+#resividor {
+    animation: animation-r 1s ease;
+}
+
+@keyframes animation-r {
+    from {
+        transform: translateX(-15px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+#resividor-box {
+    animation: animation-box 2.2s ease;
+}
+
+@keyframes animation-box {
+    from {
+        transform: translateX(30px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
