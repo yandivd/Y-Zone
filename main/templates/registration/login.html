@@ -1,57 +1,86 @@
-<html>
-    <head>
-        {% load static %}
-        <title>Login</title>
-        <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+{% extends 'layout.html' %} {% block content %}
 
-        <link href="{%static 'encuesta/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
-            <!-- Custom styles for this template -->
-        <link href="{%static 'encuesta/css/signin.css'%}" rel="stylesheet">
-        <style>
-            .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-            }
+<div class="b-example-divider"></div>
 
-            @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-            }
-        </style>
+<div class="container my-3 mx-auto ">
+    <div class="row p-4  pb-5 pe-lg-0 pt-5 align-items-center rounded-3 border shadow-lg" id="resividor-box">
 
 
-    </head>
-    <body class="text-center body">
+        <div class="col-md-7 p-3 p-lg-5 pt-lg-3">
 
-        <main class="form-signin" style="align-items: center;">
-        <form method="post" action="{% url 'login' %}" class="form">
-            {% csrf_token %}
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <h1 class="display-4 fw-bold lh-1">Asi que ya conoces</h1>
+                        <h1 class="display-4 fw-bold lh-1 text-success">Y-Zone</h1>
+                        <p class="lead">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex iusto sunt perspiciatis, et asperiores repudiandae, magni, totam explicabo quas odit sint ratione amet error alias. Odit pariatur aut amet, harum ipsam ipsum doloribus soluta nihil beatae expedita
+                            rerum animi hic quis aspernatur ipsa enim, necessitatibus nam magni, eveniet velit officiis.
+                        </p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
 
+                            <button type="button" class="btn btn-success  px-4 me-md-2 fw-bold">Saber más</button>
+                            <button type="button" class="btn btn-outline-secondary  px-4">Ir a inicio de sesión</button>
 
-            <div class="form-floating">
-            <td class="form-control">
-                <input type="text" name="username" id="" placeholder="Usuario">
-            </td>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <h1 class="display-4 fw-bold lh-1">Te recomendamos</h1>
+                        <h1 class="display-4 fw-bold lh-1 text-success">Nuestra tienda</h1>
+                        <p class="lead">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex iusto sunt perspiciatis, et asperiores repudiandae, magni, totam explicabo quas odit sint ratione amet error alias. Odit pariatur aut amet, harum ipsam ipsum doloribus soluta nihil beatae expedita
+                            rerum animi hic quis aspernatur ipsa enim, necessitatibus nam magni, eveniet velit officiis.
+                        </p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+
+                            <button type="button" class="btn btn-success  px-4 me-md-2 fw-bold">Ir a la tienda</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item slide-3rd">
+                        <h1 class="display-4 fw-bold lh-1">Bienvenido a</h1>
+                        <h1 class="display-4 fw-bold lh-1 text-success">Y-Zone</h1>
+                        <p class="lead">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex iusto sunt perspiciatis, et asperiores repudiandae, magni, totam explicabo quas odit sint ratione amet error alias. Odit pariatur aut amet, harum ipsam ipsum doloribus soluta nihil beatae expedita
+                            rerum animi hic quis aspernatur ipsa enim, necessitatibus nam magni, eveniet velit officiis.
+                        </p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+
+                            <button type="button" class="btn btn-success  px-4 me-md-2 fw-bold">Saber más</button>
+                            <button type="button" class="btn btn-outline-secondary  px-4">Ir a inicio de sesión</button>
+
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div>
-                <p></p>
+
+            <!--  -->
+        </div>
+        <div class="col-md-3 m-auto registro-div align-items-center">
+            <div class="card p-4 shadow-lg" style="width: 18rem;" id="resividor-l">
+                <h2>Inicio de sesion:</h2>
+                <!--? formulario de registro -->
+                <form method="post" action="{% url 'login' %}" class="form">
+                    {% csrf_token %}
+                    <div class="form-group form-card text-center">
+                        <input type="text" name="user" class="form-control mx-auto my-1" placeholder="Usuario" aria-describedby="helpId" required>
+                        <input type="password" name="pass" class="form-control mx-auto my-1" placeholder="Contraseña" aria-describedby="helpId" required>
+                        <input type="submit" value="Inicio Sesion" class="btn form-control mx-auto my-1 btn-success mt-1 btn-block fw-bold">
+                        <input type="hidden" name="next" value="{{ next }}" />
+                    </div>
+                </form>
             </div>
-            <div class="form-floating">
-            <td class="form-control">
-                <input type="password" name="password" id="" placeholder="Contrasenna">
-            </td>
-            </div>
+        </div>
+    </div>
+</div>
 
-            <input type="submit" value="Iniciar Sesion" class="w-100 btn btn-lg btn-primary" />
-            <input type="hidden" name="next" value="{{ next }}" />
 
-            </form>
 
-        </main>
-
-    </body>
-</html>
+{% endblock %}

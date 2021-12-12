@@ -2,11 +2,24 @@
     background-color: red;
 }
 
-#resividor {
+#resividor-r {
     animation: animation-r 1s ease;
 }
 
 @keyframes animation-r {
+    from {
+        transform: translateX(-15px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+#resividor-l {
+    animation: animation-l 1s ease;
+}
+
+@keyframes animation-l {
     from {
         transform: translateX(-15px);
     }
@@ -30,7 +43,7 @@
 }
 
 #nb {
-    animation: animation-nb 2.2s ease;
+    animation: animation-nb 1s ease;
 }
 
 @keyframes animation-nb {
