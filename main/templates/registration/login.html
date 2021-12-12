@@ -1,0 +1,57 @@
+<html>
+    <head>
+        {% load static %}
+        <title>Login</title>
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+        <link href="{%static 'encuesta/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+            <!-- Custom styles for this template -->
+        <link href="{%static 'encuesta/css/signin.css'%}" rel="stylesheet">
+        <style>
+            .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            }
+
+            @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+            }
+        </style>
+
+
+    </head>
+    <body class="text-center body">
+
+        <main class="form-signin" style="align-items: center;">
+        <form method="post" action="{% url 'login' %}" class="form">
+            {% csrf_token %}
+
+
+            <div class="form-floating">
+            <td class="form-control">
+                <input type="text" name="username" id="" placeholder="Usuario">
+            </td>
+            </div>
+            <div>
+                <p></p>
+            </div>
+            <div class="form-floating">
+            <td class="form-control">
+                <input type="password" name="password" id="" placeholder="Contrasenna">
+            </td>
+            </div>
+
+            <input type="submit" value="Iniciar Sesion" class="w-100 btn btn-lg btn-primary" />
+            <input type="hidden" name="next" value="{{ next }}" />
+
+            </form>
+
+        </main>
+
+    </body>
+</html>
