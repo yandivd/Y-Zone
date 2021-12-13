@@ -96,7 +96,6 @@
                 <h2>Registro:</h2>
                 <!--? formulario de registro -->
                 <form action="{% url 'login' %}" method="POST">
-                    {% crsf_token %}
 
                     <div class="form-group form-card text-center">
                         <input type="text" name="user" class="form-control mx-auto my-1" placeholder="Usuario" aria-describedby="helpId" required>
