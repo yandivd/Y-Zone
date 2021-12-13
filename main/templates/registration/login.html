@@ -67,13 +67,13 @@
             <div class="card p-4 shadow-lg" style="width: 18rem;" id="resividor-l">
                 <h2>Inicio de sesion:</h2>
                 <!--? formulario de registro -->
-                <form method="post" action="{% url 'login' %}" class="form">
+                <form method="post" action="{% url 'home' %}" class="form">
                     {% csrf_token %}
                     <div class="form-group form-card text-center">
                         <input type="text" name="user" class="form-control mx-auto my-1" placeholder="Usuario" aria-describedby="helpId" required>
                         <input type="password" name="pass" class="form-control mx-auto my-1" placeholder="Contraseña" aria-describedby="helpId" required>
-                        <input type="submit" value="Inicio Sesion" class="btn form-control mx-auto my-1 btn-success mt-1 btn-block fw-bold">
-                        <input type="hidden" name="next" value="{{ next }}" />
+                        <input type="submit" value="Iniciar Sesion" class="btn form-control mx-auto my-1 btn-success mt-1 btn-block fw-bold">
+                        <!---<input type="hidden" name="next" value="{{ next }}" />--->
                     </div>
                 </form>
                 <a role="button" href="{% url 'home' %}" name="" id="" class="btn btn-outline text-success fw-bold btn-block">Cancelar</a>

@@ -12,6 +12,18 @@
 </head>
 
 <body>
+<!---Esto es para comprobar si se logea o no --->
+{% if user.is_authenticated %}
+<p>Bienvenido {{user.username}}</p>
+    <li>
+      <a href="{% url 'logout' %}">Cerrar Cesion</a>
+    </li>
+{% else %}
+<p>Inicia Sesion</p>
+      <li>
+        <a href="{% url 'login' %}">Iniciar Sesion</a>
+      </li>
+{% endif %}
 
     {% include 'partials/_navbar.html' %}
 
