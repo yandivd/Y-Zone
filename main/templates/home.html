@@ -12,8 +12,13 @@
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="5000">
+                        {%if user.is_authenticated%}
+                        <h1 class="display-4 fw-bold lh-1">Bienvenido {{user.username}} a</h1>
+                        <h1 class="display-4 fw-bold lh-1 text-success">Y-Zone</h1>
+                        {%else%}
                         <h1 class="display-4 fw-bold lh-1">Bienvenido a</h1>
                         <h1 class="display-4 fw-bold lh-1 text-success">Y-Zone</h1>
+                        {%endif%}
                         <p class="lead">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex iusto sunt perspiciatis, et asperiores repudiandae, magni, totam explicabo quas odit sint ratione amet error alias. Odit pariatur aut amet, harum ipsam ipsum doloribus soluta nihil beatae expedita
                             rerum animi hic quis aspernatur ipsa enim, necessitatibus nam magni, eveniet velit officiis.
@@ -21,7 +26,9 @@
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
 
                             <button type="button" class="btn btn-success  px-4 me-md-2 fw-bold">Saber más</button>
-                            <button type="button" class="btn btn-outline-secondary  px-4">Ir a inicio de sesión</button>
+                            {% if user.is_not_authenticated %}
+                            <a href="{% url 'login' %}"><button type="button" class="btn btn-outline-secondary  px-4">Ir a inicio de sesión</button></a>
+                            {% endif %}
 
                         </div>
                     </div>
@@ -37,20 +44,7 @@
                             <button type="button" class="btn btn-success  px-4 me-md-2 fw-bold">Ir a la tienda</button>
                         </div>
                     </div>
-                    <div class="carousel-item slide-3rd">
-                        <h1 class="display-4 fw-bold lh-1">Bienvenido a</h1>
-                        <h1 class="display-4 fw-bold lh-1 text-success">Y-Zone</h1>
-                        <p class="lead">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex iusto sunt perspiciatis, et asperiores repudiandae, magni, totam explicabo quas odit sint ratione amet error alias. Odit pariatur aut amet, harum ipsam ipsum doloribus soluta nihil beatae expedita
-                            rerum animi hic quis aspernatur ipsa enim, necessitatibus nam magni, eveniet velit officiis.
-                        </p>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
 
-                            <button type="button" class="btn btn-success  px-4 me-md-2 fw-bold">Saber más</button>
-                            <button type="button" class="btn btn-outline-secondary  px-4">Ir a inicio de sesión</button>
-
-                        </div>
-                    </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -71,5 +65,7 @@
 </div>
 
 <div class="b-example-divider"></div>
+
+
 
 {% endblock %}
