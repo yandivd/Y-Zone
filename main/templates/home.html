@@ -26,9 +26,7 @@
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
 
                             <button type="button" class="btn btn-success  px-4 me-md-2 fw-bold">Saber más</button>
-                            {% if user.is_not_authenticated %}
                             <a href="{% url 'login' %}"><button type="button" class="btn btn-outline-secondary  px-4">Ir a inicio de sesión</button></a>
-                            {% endif %}
 
                         </div>
                     </div>
