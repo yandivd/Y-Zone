@@ -71,18 +71,13 @@
             {% csrf_token %}
 
 
-            <div class="form-floating">
 
-              <td class="form-control">{{ form.username }}</td>
-            </div>
-            <div>
-                <p></p>
-            </div>
-            <div class="form-floating">
-              <td class="form-control">{{ form.password }}</td>
-            </div>
+                    <div class="form-group form-card text-center">
+                        <input type="text" name="user" class="form-control mx-auto my-1" placeholder="Usuario" aria-describedby="helpId" required>
+                        <input type="password" name="pass" class="form-control mx-auto my-1" placeholder="Contraseña" aria-describedby="helpId" required>
+                    </div>
 
-              <input type="submit" value="login" class="w-100 btn btn-lg btn-primary" />
+              <input type="submit" value="login" class="btn form-control mx-auto my-1 btn-success mt-1 btn-block fw-bold" />
               <input type="hidden" name="next" value="{{ next }}" />
 
             </form>

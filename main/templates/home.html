@@ -1,32 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="b-example-divider"></div>
-{% if user.is_authenticated %}
-<div class="container">
-    <div class="row">
 
-
-
-
-
-
-        Aqui iria el contenido de home para cuando el usuario ya este autenticado!
-        <!-- Aqui iria el home para cuando el usuario ya este autenticado -->
-        <p>Bienvenido {{user.username}}</p>
-        <li>
-            <a href="{% url 'logout' %}">Cerrar Cesion</a>
-        </li>
-
-
-
-
-
-
-
-
-    </div>
-</div>
-{% else %}
 
 <div class="container my-3 mx-auto ">
     <div class="row p-4  pb-5 pe-lg-0 pt-5 align-items-center rounded-3 border shadow-lg" id="resividor-box">
@@ -91,29 +66,9 @@
         </div>
 
 
-        <div class="col-md-3 m-auto registro-div align-items-center">
-            <div class="card p-4 shadow-lg" style="width: 18rem;" id="resividor-r">
-                <h2>Registro:</h2>
-                <!--? formulario de registro -->
-                <form action="{% url 'login' %}" method="POST">
-
-                    <div class="form-group form-card text-center">
-                        <input type="text" name="user" class="form-control mx-auto my-1" placeholder="Usuario" aria-describedby="helpId" required>
-                        <input type="email" name="email" class="form-control mx-auto my-1" placeholder="Correo electrónico" aria-describedby="helpId" required>
-                        <input type="password" name="pass" class="form-control mx-auto my-1" placeholder="Contraseña" aria-describedby="helpId" required>
-                        <input type="submit" value="Registrarme" class="btn form-control mx-auto my-1 btn-success mt-1 btn-block fw-bold">
-                    </div>
-
-                </form>
-                <h6 class="text-center">Ya tienes una cuenta?</h6>
-                <a role="button" href="{% url 'login' %}" name="" id="" class="btn btn-outline text-success fw-bold btn-block">Ir a LogIn</a>
-            </div>
-        </div>
-
 
     </div>
 </div>
-{% endif %}
 
 <div class="b-example-divider"></div>
 
