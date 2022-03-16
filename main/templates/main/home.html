@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'main/base.html' %}
 {% block content %}
 {%if user.is_authenticated%}
-<h1>Hello World</h1>
+<h1>Hello {{user.username}}</h1>
 <!---Aqui va la plantilla de Home para cuando el user este logeado--->
 
 {%else%}
@@ -33,14 +33,15 @@
                     </div>
                     <div class="carousel-item" data-bs-interval="3000">
                         <h1 class="display-4 fw-bold lh-1">Te recomendamos</h1>
-                        <h1 class="display-4 fw-bold lh-1 text-success">Nuestra tienda</h1>
+                        <h1 class="display-4 fw-bold lh-1 text-success">Ver el Ranking</h1>
                         <p class="lead">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex iusto sunt perspiciatis, et asperiores repudiandae, magni, totam explicabo quas odit sint ratione amet error alias. Odit pariatur aut amet, harum ipsam ipsum doloribus soluta nihil beatae expedita
                             rerum animi hic quis aspernatur ipsa enim, necessitatibus nam magni, eveniet velit officiis.
                         </p>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
 
-                            <button type="button" class="btn btn-success  px-4 me-md-2 fw-bold">Ir a la tienda</button>
+                            <a href="#"><button type="button" class="btn btn-success  px-4 me-md-2 fw-bold">Ir al Ranking</button></a>
+
                         </div>
                     </div>
 
