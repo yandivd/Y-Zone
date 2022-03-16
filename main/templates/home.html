@@ -1,5 +1,10 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
+{%if user.is_authenticated%}
+<h1>Hello World</h1>
+<!---Aqui va la plantilla de Home para cuando el user este logeado--->
 
+{%else%}
 <div class="b-example-divider"></div>
 
 
@@ -12,13 +17,9 @@
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="5000">
-                        {%if user.is_authenticated%}
-                        <h1 class="display-4 fw-bold lh-1">Bienvenido {{user.username}} a</h1>
-                        <h1 class="display-4 fw-bold lh-1 text-success">Y-Zone</h1>
-                        {%else%}
+
                         <h1 class="display-4 fw-bold lh-1">Bienvenido a</h1>
                         <h1 class="display-4 fw-bold lh-1 text-success">Y-Zone</h1>
-                        {%endif%}
                         <p class="lead">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex iusto sunt perspiciatis, et asperiores repudiandae, magni, totam explicabo quas odit sint ratione amet error alias. Odit pariatur aut amet, harum ipsam ipsum doloribus soluta nihil beatae expedita
                             rerum animi hic quis aspernatur ipsa enim, necessitatibus nam magni, eveniet velit officiis.
@@ -65,5 +66,6 @@
 <div class="b-example-divider"></div>
 
 
-
+{%endif%}
 {% endblock %}
+
