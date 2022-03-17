@@ -6,18 +6,18 @@
       </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'ranking' %}"><i class="bi bi-newspaper"></i>  Ranking</a>
+                <li class="nav-item active">
+                    <a class="nav-link {% if request.path == '/ranking/' %} active{% endif %}" aria-current="page" href="{% url 'ranking' %}" ><i class="bi bi-newspaper" ></i>  Ranking</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#"><i class="bi bi-bag"></i> Tienda</a>
+                    <a class="nav-link {% if request.path == '/tienda/' %} active{% endif %}" href="#"><i class="bi bi-bag"></i> Tienda</a>
                 </li>
                 <li class="nav-item active">
                     {% if user.is_authenticated %}
                     <a class="nav-link active" href="{% url 'logout' %}"><i class="bi bi-door-closed"></i> Cerrar Sesion</a>
 
                     {% else %}
-                <a class="nav-link active" href="{% url 'login' %}"><i class="bi bi-door-closed"></i> Iniciar Sesion</a>
+                <a class="nav-link {% if request.path == '/accounts/login/' %} active {%endif%}" href="{% url 'login' %}"><i class="bi bi-door-closed"></i> Iniciar Sesion</a>
                     {% endif %}
 
                     <!-- 
@@ -25,7 +25,7 @@
 
                 </li>
                 <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Otras Cosas
             </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
