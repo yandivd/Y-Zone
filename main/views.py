@@ -7,4 +7,4 @@ def home(request):
     return render(request, 'main/home.html')#! Renderizando el home
 
 def ranking(request):
-    return render(request,'main/ranking.html')
+    return render(request, 'main/ranking.html')
