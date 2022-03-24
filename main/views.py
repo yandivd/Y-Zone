@@ -40,6 +40,50 @@ def actualizar_resultados(request):
     }
 
     if request.method=='POST':
-        p1=
+        formulario=TorneoLocalForm(data=request.POST)
+        if formulario.is_valid():
+
+            p1=formulario.cleaned_data["Primer_Lugar"]
+            p2=formulario.cleaned_data["Segundo_Lugar"]
+            p3=formulario.cleaned_data["Tercer_Lugar"]
+            p4=formulario.cleaned_data["Cuarto_Lugar"]
+            p5=formulario.cleaned_data["Quinto_Lugar"]
+            p6=formulario.cleaned_data["Sexto_Lugar"]
+            p7=formulario.cleaned_data["Septimo_Lugar"]
+            p8=formulario.cleaned_data["Octavo_Lugar"]
+
+            jugador=Duelista.objects.get(nombre=p1)
+            jugador.ptos+=8
+            jugador.save()
+
+            jugador=Duelista.objects.get(nombre=p2)
+            jugador.ptos+=7
+            jugador.save()
+
+            jugador = Duelista.objects.get(nombre=p3)
+            jugador.ptos += 6
+            jugador.save()
+
+            jugador = Duelista.objects.get(nombre=p4)
+            jugador.ptos += 5
+            jugador.save()
+
+            jugador = Duelista.objects.get(nombre=p5)
+            jugador.ptos += 4
+            jugador.save()
+
+            jugador = Duelista.objects.get(nombre=p6)
+            jugador.ptos += 3
+            jugador.save()
+
+            jugador = Duelista.objects.get(nombre=p7)
+            jugador.ptos += 2
+            jugador.save()
+
+            jugador = Duelista.objects.get(nombre=p8)
+            jugador.ptos += 1
+            jugador.save()
+
+            return redirect(to='ranking')
 
     return render(request, 'resultados/actualizar.html', data)

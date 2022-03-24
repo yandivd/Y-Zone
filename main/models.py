@@ -27,8 +27,8 @@ class Torneo_Local(models.Model):
     Segundo_Lugar=models.CharField(max_length=50)
     Tercer_Lugar=models.CharField(max_length=50)
     Cuarto_Lugar=models.CharField(max_length=50)
-    Quinto_Lugar=models.CharField(max_length=50)
-    Sexto_Lugar=models.CharField(max_length=50)
-    Septimo_Lugar=models.CharField(max_length=50)
-    Octavo_Lugar=models.CharField(max_length=50)
+    Quinto_Lugar=models.CharField(max_length=50, blank=True, null=True)
+    Sexto_Lugar=models.CharField(max_length=50, blank=True, null=True)
+    Septimo_Lugar=models.CharField(max_length=50, blank=True, null=True)
+    Octavo_Lugar=models.CharField(max_length=50, blank=True, null=True)
 
