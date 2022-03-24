@@ -59,6 +59,7 @@ def actualizar_resultados(request):
             p8=formulario.cleaned_data["Octavo_Lugar"]
 
             #actualizar los puntos para cada jugador
+            lista_j=[]
             try:
                 jugador=Duelista.objects.get(nombre=p1)
                 jugador.ptos+=8
@@ -98,6 +99,7 @@ def actualizar_resultados(request):
                 return redirect(to='ranking')
 
             except:
+                messages.error(request,"Duelista inexistente")
                 return redirect(to='ranking')
 
 
