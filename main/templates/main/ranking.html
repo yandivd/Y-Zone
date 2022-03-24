@@ -2,8 +2,8 @@
 {%extends 'main/base.html'%}
 {% load static %}
 {%block content%}
-<div class="pcontainer container pb-3 bg-dark" style="box-shadow: 5px 5px 10px gray;">
-    <h1 class="text-center text-light pt-5">Ranking</h1>
+<div class="pcontainer container pb-3 bg-dark d-flex justify-content-center flex-column" style="box-shadow: 5px 5px 10px gray;">
+    <img src="../../static/svg/ranking-logo.svg" class="mt-5" height="150px"/>
     {%for i in data%}
     <section class="page-section clearfix container">
         <div class="container d-flex justify-content-center my-5 bg-light py-3 rounded-3 cardcontainer">
