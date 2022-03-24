@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Duelista
-from .forms import ContactoForm, TorneoLocalForm
+from .forms import ContactoForm, ResultadosForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views here
 def home(request):
@@ -33,16 +34,21 @@ def contacto(request):
 
     return render(request, 'main/contacto.html', data)
 
+@permission_required('main.change_duelista')
 def actualizar_resultados(request):
+    #####Falta validar q no se llenen todos los campos
+    #### y q no me devuelva un objeto vacio
 
     data = {
-        "form": TorneoLocalForm()
+        "form": ResultadosForm()
     }
 
     if request.method=='POST':
-        formulario=TorneoLocalForm(data=request.POST)
+        formulario=ResultadosForm(data=request.POST)
+
         if formulario.is_valid():
 
+            #guardar los 8 jugadores q cogen puntos cada uno en una variable
             p1=formulario.cleaned_data["Primer_Lugar"]
             p2=formulario.cleaned_data["Segundo_Lugar"]
             p3=formulario.cleaned_data["Tercer_Lugar"]
@@ -52,6 +58,7 @@ def actualizar_resultados(request):
             p7=formulario.cleaned_data["Septimo_Lugar"]
             p8=formulario.cleaned_data["Octavo_Lugar"]
 
+            #actualizar los puntos para cada jugador
             jugador=Duelista.objects.get(nombre=p1)
             jugador.ptos+=8
             jugador.save()
@@ -84,6 +91,7 @@ def actualizar_resultados(request):
             jugador.ptos += 1
             jugador.save()
 
+            messages.success(request,"Ranking Actualizado Correctamente")
             return redirect(to='ranking')
 
     return render(request, 'resultados/actualizar.html', data)

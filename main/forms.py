@@ -7,7 +7,7 @@ class ContactoForm(forms.ModelForm):
         model=Contacto
         fields='__all__'
 
-class TorneoLocalForm(forms.ModelForm):
+class ResultadosForm(forms.ModelForm):
 
     class Meta:
         model=Torneo_Local
