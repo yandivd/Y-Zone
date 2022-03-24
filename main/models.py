@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 class Duelista(models.Model):
     nombre=models.CharField(max_length=50)
     imagen=models.ImageField(upload_to='duelistas')
-    ptos=models.FloatField()
-    torneos_jugados=models.IntegerField()
+    ptos=models.IntegerField()
+    torneos_clasificados=models.IntegerField()
     torneos_ganados=models.IntegerField()
     id_user=models.OneToOneField(User, on_delete=models.CASCADE)
 
