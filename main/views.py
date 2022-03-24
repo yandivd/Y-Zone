@@ -59,53 +59,58 @@ def actualizar_resultados(request):
             p8=formulario.cleaned_data["Octavo_Lugar"]
 
             #actualizar los puntos para cada jugador
+            lista_jug=[]
             try:
                 jugador=Duelista.objects.get(nombre=p1)
                 jugador.ptos+=8
-                jugador.save()
+                lista_jug.append(jugador)
 
                 jugador=Duelista.objects.get(nombre=p2)
                 jugador.ptos+=7
-                jugador.save()
+                lista_jug.append(jugador)
 
                 jugador = Duelista.objects.get(nombre=p3)
                 jugador.ptos += 6
-                jugador.save()
+                lista_jug.append(jugador)
 
                 jugador = Duelista.objects.get(nombre=p4)
                 jugador.ptos += 5
-                jugador.save()
+                lista_jug.append(jugador)
             except:
                 data["form"] = formulario
                 messages.error(request,"Usuario Incorrecto")
                 return render(request, 'resultados/actualizar.html', data)
 
+            for i in lista_jug:
+                i.save()
 
-            try:
-                jugador = Duelista.objects.get(nombre=p5)
-                jugador.ptos += 4
-                jugador.save()
+            return redirect(to=ranking)
+
+            #try:
+            #    jugador = Duelista.objects.get(nombre=p5)
+            #    jugador.ptos += 4
+            #    jugador.save()
 
 
-                jugador = Duelista.objects.get(nombre=p6)
-                jugador.ptos += 3
-                jugador.save()
+            #    jugador = Duelista.objects.get(nombre=p6)
+            #    jugador.ptos += 3
+            #    jugador.save()
 
-                jugador = Duelista.objects.get(nombre=p7)
-                jugador.ptos += 2
-                jugador.save()
+            #    jugador = Duelista.objects.get(nombre=p7)
+            #    jugador.ptos += 2
+            #    jugador.save()
 
-                jugador = Duelista.objects.get(nombre=p8)
-                jugador.ptos += 1
-                jugador.save()
+            #    jugador = Duelista.objects.get(nombre=p8)
+            #    jugador.ptos += 1
+            #    jugador.save()
 
-                messages.success(request, "Ranking Actualizado Correctamente")
-                return redirect(to='ranking')
+            #    messages.success(request, "Ranking Actualizado Correctamente")
+            #    return redirect(to='ranking')
 
-            except:
-                data["form"] = formulario
-                messages.error(request, "Usuario Incorrecto")
-                return render(request, 'resultados/actualizar.html', data)
+            #except:
+            #    data["form"] = formulario
+            #    messages.error(request, "Usuario Incorrecto")
+            #    return render(request, 'resultados/actualizar.html', data)
 
 
 
