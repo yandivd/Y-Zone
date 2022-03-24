@@ -22,3 +22,13 @@ class Contacto(models.Model):
     def __str__(self):
         return self.nombre
 
+class Torneo_Local(models.Model):
+    Primer_Lugar=models.CharField(max_length=50)
+    Segundo_Lugar=models.CharField(max_length=50)
+    Tercer_Lugar=models.CharField(max_length=50)
+    Cuarto_Lugar=models.CharField(max_length=50)
+    Quinto_Lugar=models.CharField(max_length=50)
+    Sexto_Lugar=models.CharField(max_length=50)
+    Septimo_Lugar=models.CharField(max_length=50)
+    Octavo_Lugar=models.CharField(max_length=50)
+

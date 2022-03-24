@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<br>
+<br>
+
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="card">
+    <div class="card-body">
+        <h2>Resultados del Torneo</h2>
+        <hr>
+                <form action="" method="post" enctype="multipart/form-data">
+
+                    {%csrf_token%}
+                    <div id="div_id_Primer_Lugar" class="control-group"> <label for="id_Primer_Lugar" class="control-label">
+                Primer Lugar<span class=""></span> </label> <div class="controls"> <input type="text" name="Primer_Lugar" maxlength="50" class="textinput textInput" required id="id_Primer_Lugar"> </div> </div> <div id="div_id_Segundo_Lugar" class="control-group"> <label for="id_Segundo_Lugar" class="control-label">
+                Segundo Lugar<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="Segundo_Lugar" maxlength="50" class="textinput textInput" required id="id_Segundo_Lugar"> </div> </div> <div id="div_id_Tercer_Lugar" class="control-group"> <label for="id_Tercer_Lugar" class="control-label requiredField">
+                Tercer Lugar<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="Tercer_Lugar" maxlength="50" class="textinput textInput" required id="id_Tercer_Lugar"> </div> </div> <div id="div_id_Cuarto_Lugar" class="control-group"> <label for="id_Cuarto_Lugar" class="control-label requiredField">
+                Cuarto Lugar<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="Cuarto_Lugar" maxlength="50" class="textinput textInput" required id="id_Cuarto_Lugar"> </div> </div> <div id="div_id_Quinto_Lugar" class="control-group"> <label for="id_Quinto_Lugar" class="control-label requiredField">
+                Quinto Lugar<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="Quinto_Lugar" maxlength="50" class="textinput textInput" required id="id_Quinto_Lugar"> </div> </div> <div id="div_id_Sexto_Lugar" class="control-group"> <label for="id_Sexto_Lugar" class="control-label requiredField">
+                Sexto Lugar<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="Sexto_Lugar" maxlength="50" class="textinput textInput" required id="id_Sexto_Lugar"> </div> </div> <div id="div_id_Septimo_Lugar" class="control-group"> <label for="id_Septimo_Lugar" class="control-label requiredField">
+                Septimo Lugar<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="Septimo_Lugar" maxlength="50" class="textinput textInput" required id="id_Septimo_Lugar"> </div> </div> <div id="div_id_Octavo_Lugar" class="control-group"> <label for="id_Octavo_Lugar" class="control-label requiredField">
+                Octavo Lugar<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="Octavo_Lugar" maxlength="50" class="textinput textInput" required id="id_Octavo_Lugar"> </div> </div>
+
+
+                    <div class="d-flex justify-content-end">
+
+                        <input type="reset" value="Cancelar" class="btn btn-secundary">
+                        &nbsp;
+                        <input type="submit" value="Editar" class="btn btn-primary">
+
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<br>
+<br>
+
+{% endblock %}

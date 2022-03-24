@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Duelista
-from .forms import ContactoForm
+from .forms import ContactoForm, TorneoLocalForm
 from django.contrib import messages
 
 # Create your views here
@@ -32,3 +32,14 @@ def contacto(request):
             data["form"]=formulario #si no es valido reenvia el mismo formulario con los errores
 
     return render(request, 'main/contacto.html', data)
+
+def actualizar_resultados(request):
+
+    data = {
+        "form": TorneoLocalForm()
+    }
+
+    if request.method=='POST':
+        p1=
+
+    return render(request, 'resultados/actualizar.html', data)
