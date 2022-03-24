@@ -76,7 +76,11 @@
                        <!--- <input type="text" name="user" class="form-control mx-auto my-1" placeholder="Usuario" aria-describedby="helpId" required>
                         <input type="password" name="pass" class="form-control mx-auto my-1" placeholder="Contraseña" aria-describedby="helpId" required>
                         --->
-                        {{form}}
+                        <!---{{form}}--->
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" class="form-control mx-auto my-1" placeholder="Usuario">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" name="password" autocomplete="current-password" required id="id_password" class="form-control mx-auto my-1" placeholder="Contraseña">
                     </div>
 
               <input type="submit" value="Iniciar Sesion" class="btn form-control mx-auto my-1 btn-success mt-1 btn-block fw-bold" />
