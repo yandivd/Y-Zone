@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Duelista
 from .forms import ContactoForm, ResultadosForm
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.decorators import permission_required
 
 # Create your views here
 def home(request):
