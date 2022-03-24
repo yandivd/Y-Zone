@@ -59,39 +59,57 @@ def actualizar_resultados(request):
             p8=formulario.cleaned_data["Octavo_Lugar"]
 
             #actualizar los puntos para cada jugador
-            jugador=Duelista.objects.get(nombre=p1)
-            jugador.ptos+=8
-            jugador.save()
+            try:
+                jugador=Duelista.objects.get(nombre=p1)
+                jugador.ptos+=8
+                jugador.save()
 
-            jugador=Duelista.objects.get(nombre=p2)
-            jugador.ptos+=7
-            jugador.save()
+                jugador=Duelista.objects.get(nombre=p2)
+                jugador.ptos+=7
+                jugador.save()
 
-            jugador = Duelista.objects.get(nombre=p3)
-            jugador.ptos += 6
-            jugador.save()
+                jugador = Duelista.objects.get(nombre=p3)
+                jugador.ptos += 6
+                jugador.save()
 
-            jugador = Duelista.objects.get(nombre=p4)
-            jugador.ptos += 5
-            jugador.save()
+                jugador = Duelista.objects.get(nombre=p4)
+                jugador.ptos += 5
+                jugador.save()
 
-            jugador = Duelista.objects.get(nombre=p5)
-            jugador.ptos += 4
-            jugador.save()
 
-            jugador = Duelista.objects.get(nombre=p6)
-            jugador.ptos += 3
-            jugador.save()
+                jugador = Duelista.objects.get(nombre=p5)
+                jugador.ptos += 4
+                jugador.save()
 
-            jugador = Duelista.objects.get(nombre=p7)
-            jugador.ptos += 2
-            jugador.save()
 
-            jugador = Duelista.objects.get(nombre=p8)
-            jugador.ptos += 1
-            jugador.save()
+                jugador = Duelista.objects.get(nombre=p6)
+                jugador.ptos += 3
+                jugador.save()
 
-            messages.success(request,"Ranking Actualizado Correctamente")
-            return redirect(to='ranking')
+                jugador = Duelista.objects.get(nombre=p7)
+                jugador.ptos += 2
+                jugador.save()
+
+                jugador = Duelista.objects.get(nombre=p8)
+                jugador.ptos += 1
+                jugador.save()
+
+                messages.success(request, "Ranking Actualizado Correctamente")
+                return redirect(to='ranking')
+
+            except:
+                return redirect(to='ranking')
+
 
     return render(request, 'resultados/actualizar.html', data)
+
+def reiniciar_ranking(request):
+
+    lista_duelistas=Duelista.objects.all()
+    for i in lista_duelistas:
+        i.ptos=0
+        i.save()
+        messages.success(request,"Ranking Reiniciado")
+
+    return redirect(to='home')
+

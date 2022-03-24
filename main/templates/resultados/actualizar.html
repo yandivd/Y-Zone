@@ -1,6 +1,28 @@
 {% extends 'main/base.html' %}
 {% load crispy_forms_tags %}
+
 {% block content %}
+
+
+    <script>
+        function reiniciar(){
+            Swal.fire({
+                "title": "Estas Seguro?",
+                "text": "Los puntos de todos los jugadores se reiniciaran",
+                "icon": "question",
+                "showCancelButton": true,
+                "cancelButtonText": "No, Cancelar",
+                "confirmButtonText": "Si, Reiniciar",
+                "reverseButtons": true,
+                "confirmButtonColor": "#dc3545"
+            })
+            .then(function(result){
+                if (result.isConfirmed){
+                    window.location.href = "/reiniciar-ranking/"
+                }
+            })
+        }
+    </script>
 
 <br>
 <br>
@@ -10,6 +32,7 @@
                 <div class="card">
     <div class="card-body">
         <h2>Resultados del Torneo</h2>
+        <a href="#" onclick="reiniciar()" class="bi bi-arrow-repeat"> Reiniciar</a>
         <hr>
                 <form action="" method="post" enctype="multipart/form-data">
 
@@ -19,7 +42,8 @@
 
                         <input type="reset" value="Cancelar" class="btn btn-secundary">
                         &nbsp;
-                        <input type="submit" value="Editar" class="btn btn-primary">
+
+                        <input type="submit" value="Editar" class="btn btn-success">
 
 
                     </div>
