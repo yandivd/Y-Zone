@@ -10,6 +10,7 @@ urlpatterns = [
     path('resultados/',views.actualizar_resultados, name='resultados'),
     path('reiniciar-ranking/', views.reiniciar_ranking, name='reiniciar'),
     path('me/', views.me, name='me'),
+    path('ruling/', views.ruling, name='ruling'),
 
 ]
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

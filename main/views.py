@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .models import Duelista
+from .models import Duelista, Ruling
 from .forms import ContactoForm, ResultadosForm
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required
@@ -193,4 +193,20 @@ def reiniciar_ranking(request):
 def me(request):
 
     return render(request, 'main/me.html')
+
+#este es el encargado de mostrar todos los rulings, y darle permisos a los admin a editarlos o eliminarlos
+def ruling(request):
+
+    return render(request, 'main/ruling.html')
+
+#este es el encargado de agregar un ruling nuevo
+def add_rulings(request):
+
+    return render(request, 'main/add_rulilng.html')
+
+def ruling_individual(request, id):
+
+    ruling1=get_object_or_404(Ruling, id=id)
+
+    return render(request,'main/ruling_individual.html')
 

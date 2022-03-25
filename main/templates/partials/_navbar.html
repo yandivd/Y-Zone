@@ -38,7 +38,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="#"><i class="bi bi-file-person"></i> About Us</a></li>
                         <li><a class="dropdown-item" href="{% url 'contacto' %}"><i class="bi bi-mailbox2"></i> Contacto</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-file-post"></i> Informacion legal</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ruling' %}"><i class="bi bi-file-post"></i> Ruling</a></li>
                     </ul>
                 </li>
                 {% if user.is_authenticated %}
