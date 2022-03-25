@@ -190,3 +190,7 @@ def reiniciar_ranking(request):
 
     return redirect(to='home')
 
+def me(request):
+
+    return render(request, 'main/me.html')
+
