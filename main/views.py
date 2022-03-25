@@ -84,7 +84,8 @@ def actualizar_resultados(request):
                 lista_jug.append(jugador)
             except:
                 data["form"] = formulario
-                messages.error(request,"Usuario Incorrecto")
+                data["mensaje"] = "Usuario Incorrecto"
+                #messages.error(request,"Usuario Incorrecto")
                 return render(request, 'resultados/actualizar.html', data)
 
 
@@ -93,6 +94,7 @@ def actualizar_resultados(request):
             if p5==None:
                 for i in lista_jug:
                     i.save()
+                    messages.success(request,"Ranking Actualizado Correctamente")
                 return redirect(to=ranking)
             else:
                 try:
@@ -103,7 +105,8 @@ def actualizar_resultados(request):
 
                 except:
                     data["form"] = formulario
-                    messages.error(request, "Usuario Incorrecto")
+                    data["mensaje"] = "Usuario Incorrecto"
+                    #messages.error(request, "Usuario Incorrecto")
                     return render(request, 'resultados/actualizar.html', data)
 
             if p6==None:
@@ -111,6 +114,7 @@ def actualizar_resultados(request):
                     i.save()
                 for i in lista_jug_no_oblig:
                     i.save()
+                messages.success(request,"Ranking Actualizado Correctamente")
                 return redirect(to=ranking)
             else:
                 try:
@@ -121,7 +125,8 @@ def actualizar_resultados(request):
 
                 except:
                     data["form"] = formulario
-                    messages.error(request, "Usuario Incorrecto")
+                    data["mensaje"] = "Usuario Incorrecto"
+                    #messages.error(request, "Usuario Incorrecto")
                     return render(request, 'resultados/actualizar.html', data)
 
             if p7==None:
@@ -129,6 +134,7 @@ def actualizar_resultados(request):
                     i.save()
                 for i in lista_jug_no_oblig:
                     i.save()
+                messages.success(request,"Ranking Actualizado Correctamente")
                 return redirect(to=ranking)
             else:
                 try:
@@ -139,7 +145,8 @@ def actualizar_resultados(request):
 
                 except:
                     data["form"] = formulario
-                    messages.error(request, "Usuario Incorrecto")
+                    data["mensaje"] = "Usuario Incorrecto"
+                    #messages.error(request, "Usuario Incorrecto")
                     return render(request, 'resultados/actualizar.html', data)
 
             if p8==None:
@@ -147,6 +154,7 @@ def actualizar_resultados(request):
                     i.save()
                 for i in lista_jug_no_oblig:
                     i.save()
+                messages.success(request,"Ranking Actualizado Correctamente")
                 return redirect(to=ranking)
             else:
                 try:
@@ -157,13 +165,15 @@ def actualizar_resultados(request):
 
                 except:
                     data["form"] = formulario
-                    messages.error(request, "Usuario Incorrecto")
+                    data["mensaje"] = "Usuario Incorrecto"
+                    #messages.error(request, "Usuario Incorrecto")
                     return render(request, 'resultados/actualizar.html', data)
 
             for i in lista_jug:
                 i.save()
             for i in lista_jug_no_oblig:
                 i.save()
+            messages.success(request,"Ranking Actualizado Correctamente")
 
             return redirect('ranking')
     return render(request, 'resultados/actualizar.html', data)
