@@ -197,16 +197,16 @@ def me(request):
 #este es el encargado de mostrar todos los rulings, y darle permisos a los admin a editarlos o eliminarlos
 def ruling(request):
 
-    return render(request, 'main/ruling.html')
+    return render(request, 'main/ruling/ruling.html')
 
 #este es el encargado de agregar un ruling nuevo
 def add_rulings(request):
 
-    return render(request, 'main/add_rulilng.html')
+    return render(request, 'main/ruling/add_rulilng.html')
 
 def ruling_individual(request, id):
 
     ruling1=get_object_or_404(Ruling, id=id)
 
-    return render(request,'main/ruling_individual.html')
+    return render(request,'main/ruling/ruling_individual.html')
 
