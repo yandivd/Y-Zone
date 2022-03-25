@@ -12,12 +12,6 @@ sr.reveal('.scroll-banner-info', {
     distance: '200px'
 })
 
-sr.reveal('.star', {
-    duration: 2000,
-    origin: 'left',
-    distance: '-200px'
-})
-
 sr.reveal('.pcontainer', {
     duration: 2000,
     origin: 'top',
@@ -27,5 +21,5 @@ sr.reveal('.pcontainer', {
 sr.reveal('.cardcontainer', {
     duration: 2000,
     origin: 'bottom',
-    distance: '-200px'
+    distance: '-200px',
 })
