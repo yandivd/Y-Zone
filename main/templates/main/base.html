@@ -79,6 +79,7 @@ Y SI YA ESTA LOGUEADO POS LE EMPIEZO A MOSTRAR CONTENIDO -->
     <!---Mensajes chulos de sweetAlert2 --->
     {% if messages %}
         {% for i in messages %}
+
             <script>
                 Swal.fire({
                     "title": "Felicitaciones",
@@ -86,8 +87,10 @@ Y SI YA ESTA LOGUEADO POS LE EMPIEZO A MOSTRAR CONTENIDO -->
                     "icon": "success"
                 })
             </script>
+
         {% endfor %}
     {% endif %}
+
 </body>
 
 </html>

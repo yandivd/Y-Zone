@@ -12,6 +12,13 @@
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == '/tienda/' %} active{% endif %}" href="#"><i class="bi bi-bag"></i> Tienda</a>
                 </li>
+
+                {% if perms.main.change_duelista %}
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/resultados/' %} active{% endif %}" href="{% url 'resultados' %}"><i class="bi bi-award"></i> Actualizar Ranking</a>
+                </li>
+                {% endif %}
+
                 <li class="nav-item active">
                     {% if user.is_authenticated %}
                     <a class="nav-link active" href="{% url 'logout' %}"><i class="bi bi-door-closed"></i> Cerrar Sesion</a>
