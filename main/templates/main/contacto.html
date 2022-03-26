@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 
-{% load crispy_forms_tags %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
 {% block content %}
 
 <br>
@@ -14,7 +14,7 @@
              <form action="" class="" id="formulario_contacto" method="POST"> <!---Method post envia los datoes--->
             {% csrf_token %} <!---Token de seguridad siempre necesario--->
 
-            {{form | crispy}}
+            {% comment %} {{form | crispy}} {% endcomment %}
             <br>
         <div class="d-flex justify-content-end">
             <button type="reset" value="Cancelar" class="btn btn-secondary">Cancelar</button><!---El tipo submit es el q recarga la pag y envia los datos--->
