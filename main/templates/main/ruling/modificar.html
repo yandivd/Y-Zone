@@ -1,6 +1,11 @@
 {% extends 'main/base.html' %}
-{% load crispy_forms_tags %}
-{% block content %}
+
+{%block js%}
+{%endblock%}
+
+{% load crispy_forms_tags%}
+{%block content%}
+
 <br>
 <br>
 
@@ -8,7 +13,7 @@
             <div class="col-12 col-md-6 offset-md-3">
                 <div class="card">
     <div class="card-body">
-        <h2>Agregar Producto</h2>
+        <h2>Editar Producto</h2>
         <hr>
                 <form action="" method="post" enctype="multipart/form-data">
 
@@ -20,13 +25,12 @@
 
                         <input type="reset" value="Cancelar" class="btn btn-secundary">
                         &nbsp;
-                        <input type="submit" value="Guardar" class="btn btn-primary">
+                        <input type="submit" value="Editar" class="btn btn-primary">
 
 
                     </div>
 
                 </form>
-                    {{mensaje}}
             </div>
         </div>
 
@@ -36,4 +40,4 @@
 <br>
 <br>
 
-{% endblock %}
+{%endblock%}

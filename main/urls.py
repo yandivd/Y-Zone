@@ -11,6 +11,9 @@ urlpatterns = [
     path('reiniciar-ranking/', views.reiniciar_ranking, name='reiniciar'),
     path('me/', views.me, name='me'),
     path('ruling/', views.ruling, name='ruling'),
+    path('agregar-regla/', views.add_rulings, name='agregar_regla'),
+    path('modificar-regla/<id>/', views.editar_regla, name='modificar_regla'),
+    path('eliminar-regla/<id>/', views.eliminar_regla, name='eliminar_regla'),
 
 ]
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
