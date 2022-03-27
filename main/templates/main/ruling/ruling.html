@@ -56,7 +56,9 @@
 
 </table>
         <hr>
+        {% if perms.main.add_ruling %}
         <a href="{% url 'agregar_regla' %}"><button class="btn btn-success">Agregar regla</button></a>
+        {% endif %}
         <div>
             {% include 'main/paginator.html' %}
         </div>

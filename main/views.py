@@ -196,7 +196,6 @@ def me(request):
     return render(request, 'main/me.html')
 
 #este es el encargado de mostrar todos los rulings, y darle permisos a los admin a editarlos o eliminarlos
-@permission_required('main.view_ruling')
 def ruling(request):
 
     reglas=Ruling.objects.all()
