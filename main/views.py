@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, Http404
-from .models import Duelista, Ruling
+from .models import Duelista, Ruling, Carta
 from .forms import ContactoForm, ResultadosForm, CartaForm, RulingForm
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required
@@ -259,7 +259,12 @@ def eliminar_regla(request, id):
     return redirect(to='ruling')
 
 def ruling_individual(request, id):
-
     ruling1=get_object_or_404(Ruling, id=id)
+    #lista_cartas=Ruling.cartas.all(id=id)
+    
+    data={
+        "regla":ruling1,
+        #"cartas":lista_cartas
+    }
 
-    return render(request,'main/ruling/ruling_individual.html')
+    return render(request,'main/ruling/ruling_individual.html', data)

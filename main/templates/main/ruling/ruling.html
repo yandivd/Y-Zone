@@ -38,7 +38,7 @@
 
     {% for i in entity %}
         <tr>
-            <td>{{i.nombre}}</td>
+            <td><a href="{% url 'regla_info' i.id %}">{{i.nombre}}</a></td>
             <td>{{i.descripcion}}</td>
             <td> </td>
 

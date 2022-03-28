@@ -14,6 +14,7 @@ urlpatterns = [
     path('agregar-regla/', views.add_rulings, name='agregar_regla'),
     path('modificar-regla/<id>/', views.editar_regla, name='modificar_regla'),
     path('eliminar-regla/<id>/', views.eliminar_regla, name='eliminar_regla'),
+    path('regla-info/<id>/', views.ruling_individual, name='regla_info'),
 
 ]
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
