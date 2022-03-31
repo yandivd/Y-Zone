@@ -35,13 +35,13 @@ class Torneo_Local(models.Model):
 
 class Carta(models.Model):
     nombre=models.CharField(max_length=50)
-    imagen=models.ImageField(upload_to='cartas', null=True, blank=True)
 
 
     def __str__(self):
         return self.nombre
 
 class Ruling(models.Model):
+    imagen = models.ImageField(upload_to='cartas', null=True, blank=True)
     nombre=models.CharField(max_length=80)
     cartas=models.ManyToManyField(Carta)
     descripcion=models.TextField()
