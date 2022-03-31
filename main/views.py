@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
-from .models import Duelista
-from .forms import ContactoForm, ResultadosForm
+from django.http import HttpResponse, Http404
+from .models import Duelista, Ruling, Carta
+from .forms import ContactoForm, ResultadosForm, CartaForm, RulingForm
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required
+from django.core.paginator import Paginator
 
 # Create your views here
 def home(request):
@@ -194,3 +195,76 @@ def me(request):
 
     return render(request, 'main/me.html')
 
+#este es el encargado de mostrar todos los rulings, y darle permisos a los admin a editarlos o eliminarlos
+def ruling(request):
+
+    reglas=Ruling.objects.all()
+    page = request.GET.get('page', 1) #recoger la variable page, y si no existe recoge un 1 de vuelta
+
+    try:
+        paginator=Paginator(reglas, 5)
+        reglas=paginator.page(page)
+
+    except:
+        raise Http404
+
+    data={
+        "entity": reglas,
+        "paginator": paginator
+    }
+    return render(request, 'main/ruling/ruling.html', data)
+
+#este es el encargado de agregar un ruling nuevo
+@permission_required('main.add_ruling')
+def add_rulings(request):
+    data={
+        "form": RulingForm
+    }
+    if request.method=='POST':
+        formulario=RulingForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Regla agregada correctamente")
+            return redirect(to='ruling')
+        else:
+            data["form"]=formulario
+
+    return render(request, 'main/ruling/add_ruling.html', data)
+
+@permission_required('main.change_ruling')
+def editar_regla(request, id):
+
+    regla= get_object_or_404(Ruling, id=id) #toma el producto de la id
+
+    data={
+        "form": RulingForm(instance=regla) #toma el formulario agregar producto con los datos del instance
+    }
+
+    if request.method=='POST':
+        formulario=RulingForm(data=request.POST, instance=regla, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request,"Modificada Correctamente")
+            return redirect(to='ruling') #te redirige al listado de productos ya editados
+        else:
+            data["form"]=formulario
+
+    return render(request,'main/ruling/modificar.html', data)
+
+@permission_required('app.delete_producto')
+def eliminar_regla(request, id):
+    producto=get_object_or_404(Ruling, id=id)
+    producto.delete()
+    messages.success(request, "Eliminado Correctamente")
+    return redirect(to='ruling')
+
+def ruling_individual(request, id):
+    ruling1=get_object_or_404(Ruling, id=id)
+    #lista_cartas=Ruling.cartas.all(id=id)
+    
+    data={
+        "regla":ruling1,
+        #"cartas":lista_cartas
+    }
+
+    return render(request,'main/ruling/ruling_individual.html', data)

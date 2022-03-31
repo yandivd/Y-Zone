@@ -1,0 +1,70 @@
+{% extends 'main/base.html' %}
+
+{%block js%}
+<!---Este escript carga las opciones chulas de eliminar producto, confirmacion y esas cosas--->
+    <script>
+        function eliminarRegla(id){
+            Swal.fire({
+                "title": "Estas Seguro?",
+                "text": "Esta accion no se puede deshacer",
+                "icon": "question",
+                "showCancelButton": true,
+                "cancelButtonText": "No, Cancelar",
+                "confirmButtonText": "Si, Eliminar",
+                "reverseButtons": true,
+                "confirmButtonColor": "#dc3545"
+            })
+            .then(function(result){
+                if (result.isConfirmed){
+                    window.location.href = "/eliminar-regla/"+id+"/"
+                }
+            })
+        }
+    </script>
+{%endblock%}
+
+{%block content%}
+<br><br><br>
+<div class="card">
+    <card class="card-body">
+        <h2>Listado de Reglas</h2>
+        <hr>
+        <table class="table table-striped table-hover rable-responsive-sm">
+    <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th> </th>
+    </tr>
+
+    {% for i in entity %}
+        <tr>
+            <td><a href="{% url 'regla_info' i.id %}">{{i.nombre}}</a></td>
+            <td>{{i.descripcion}}</td>
+            <td> </td>
+
+            <td>
+                {% if perms.app.change_ruling %}
+                <a href="{% url 'modificar_regla' i.id %}" class="btn btn-info btn-sm">Modificar</a>
+                {% endif %}
+                {% if perms.app.delete_ruling %}
+                <a href="#" onclick="eliminarRegla({{i.id}})" class="btn btn-danger btn-sm">Eliminar</a>
+                {% endif %}
+            </td>
+            <td> </td>
+        </tr>
+    {% endfor %}
+
+</table>
+        <hr>
+        {% if perms.main.add_ruling %}
+        <a href="{% url 'agregar_regla' %}"><button class="btn btn-success">Agregar regla</button></a>
+        {% endif %}
+        <div>
+            {% include 'main/paginator.html' %}
+        </div>
+    </card>
+</div>
+
+<br>
+<br>
+{%endblock%}

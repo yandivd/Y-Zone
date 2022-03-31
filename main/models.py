@@ -32,3 +32,22 @@ class Torneo_Local(models.Model):
     Septimo_Lugar=models.CharField(max_length=50, blank=True, null=True)
     Octavo_Lugar=models.CharField(max_length=50, blank=True, null=True)
 
+
+class Carta(models.Model):
+    nombre=models.CharField(max_length=50)
+
+
+    def __str__(self):
+        return self.nombre
+
+class Ruling(models.Model):
+    imagen = models.ImageField(upload_to='cartas', null=True, blank=True)
+    nombre=models.CharField(max_length=80)
+    cartas=models.ManyToManyField(Carta)
+    descripcion=models.TextField()
+
+    def __str__(self):
+        return self.nombre
+
+
+
