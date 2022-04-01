@@ -193,7 +193,18 @@ def reiniciar_ranking(request):
 
 def me(request):
 
-    return render(request, 'main/me.html')
+    position=1
+    posFinal=0
+    lista_players=Duelista.objects.all().order_by("-ptos")
+    if request.user:
+        duelista=Duelista.objects.get(id_user=request.user)
+        for i in lista_players:
+            if i.nombre==duelista.nombre:
+                posFinal=position
+            else:
+                position+=1
+
+    return render(request, 'main/me.html',{"duelista":duelista, "pos":posFinal})
 
 #este es el encargado de mostrar todos los rulings, y darle permisos a los admin a editarlos o eliminarlos
 def ruling(request):
