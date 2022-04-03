@@ -37,20 +37,15 @@ LOGOUT_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [
-    'admin_interface',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main.apps.MainConfig',
-    'colorfield',
+    'main',
     'crispy_forms',
 ]
-CRISPY_TEMPLATE_PACK='bootstrap4'
-
-X_FRAME_OPTIONS='SAMEORIGIN'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
