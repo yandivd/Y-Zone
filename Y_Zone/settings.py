@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mfv2h#m-48qq8$_43^iqp1j330_gz@cblv0jcjqa41w#3&pds+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'colorfield',
     'crispy_forms',
+    'pwa',
 ]
 CRISPY_TEMPLATE_PACK='bootstrap4'
 
@@ -140,3 +141,21 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+PWA_APP_NAME = 'Y-Zone'
+PWA_APP_DESCRIPTION = 'Gestion de los torneos de YuGiOh! en artemisa'
+PWA_APP_THEME_COLOR = '#3477f5'
+PWA_APP_BACKGROUND_COLOR = '#6699f7'
+PWA_APP_ICONS = [
+    {
+        "src": '/static/img/favicon.png',
+        "sizes": '160x160'
+    }
+]
+
+PWA_APP_ICONS_APPLE = [
+    {
+        "src": '/static/img/favicon.png',
+        "sizes": '160x160'
+    }
+]
