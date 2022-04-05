@@ -279,3 +279,7 @@ def ruling_individual(request, id):
     }
 
     return render(request,'main/ruling/ruling_individual.html', data)
+
+def about_us(request):
+
+    return render(request, 'main/about_us.html')
