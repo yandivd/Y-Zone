@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'colorfield',
     'crispy_forms',
-    'pwa',
+    #'pwa',
 ]
 CRISPY_TEMPLATE_PACK='bootstrap4'
 
