@@ -87,10 +87,15 @@ WSGI_APPLICATION = 'Y_Zone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#Postgre SQL
 DATABASES = {
-  'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.path.join('y-zone'),
+        'USER': 'postgres',
+        'PASSWORD': 'Seguimos/25',
+        'HOST': 'localhost',
+        'DATABASE_PORT': '5432',
     }
 }
 
