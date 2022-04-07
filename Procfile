@@ -1,1 +1,0 @@
-web: gunicorn Y_Zone.wsgi --log-file -
