@@ -1,0 +1,1 @@
+web: gunicorn Y_Zone.wsgi
