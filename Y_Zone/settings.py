@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-mfv2h#m-48qq8$_43^iqp1j330_gz@cblv0jcjqa41w#3&pds+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
@@ -179,7 +179,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #dropbox
 
-DROPBOX_OAUTH2_TOKEN = 'U14eIr9d8roAAAAAAAAAAXVs9MsVFg1pWLLo5NuxD5oYoqNKJvN1yo8qjYyH1hOi'
+DROPBOX_OAUTH2_TOKEN = 'sl.BFS0RizK8ysa6Xv87vOxPwWUMGISH53nYx921E9d_7fboGrzzbWts71hHdpbipFndgRS2iaH8v4jhCrbza9IMbkXDj9Z_Y5vfvCrA1Yfz0p2RbCYMgkmBRCTDddaCza6wPgsznuKWSMi'
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 
 
