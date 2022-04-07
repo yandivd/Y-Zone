@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dropbox
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -181,3 +182,12 @@ STATIC_URL = '/static/'
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+#dropbox
+
+DROPBOX_OAUTH2_TOKEN = 'sl.BFT0qqc_znToq3rtNZ0P9F-1k-_UTHzcq-sQLJQJiSn5Q2lLpEqgabwaJhvsnxCFdsorG6bJXr9Zkml1OviszbndDd2kGMh7mOkC6TCAzmxAytw7lCrrNYZzERIaMY3SODkMyEDc2w9b'
+DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+
+
+dbx = dropbox.Dropbox (DROPBOX_OAUTH2_TOKEN)
+DROPBOX_ROOT_PATH = '/media/'
