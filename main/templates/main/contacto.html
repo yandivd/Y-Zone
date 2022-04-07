@@ -3,38 +3,26 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<br>
-<br>
-    <div class="row">
-        <div class="col-12 col-md-6 offset-md-3">
-            <div class="card">
-                <div class="card-body">
-                     <h2>Contactanos!</h2>
-            <hr>
-             <form action="" class="" id="formulario_contacto" method="POST"> <!---Method post envia los datoes--->
-            {% csrf_token %} <!---Token de seguridad siempre necesario--->
+<section class="container d-flex justify-content-center my-4">
+        <div class="card" style="width: 700px;">
+            <div class="card-body">
+                <h2>Contactanos!</h2>
+                <hr>
+                <form action="" class="" id="formulario_contacto" method="POST"> <!---Method post envia los datoes-->
+                    {% csrf_token %} <!--Token de seguridad siempre necesario-->
 
-            {{form | crispy}}
-            <br>
-        <div class="d-flex justify-content-end">
-            <button type="reset" value="Cancelar" class="btn btn-secondary">Cancelar</button><!---El tipo submit es el q recarga la pag y envia los datos--->
-            &nbsp;
-            <button type="submit" id="btnEnviar" class="btn btn-primary">Enviar</button><!---El tipo submit es el q recarga la pag y envia los datos--->
-        </div>
+                    {{form | crispy}}
+                    <br>
+                    <div class="d-flex justify-content-end">
+                        <button type="reset" value="Cancelar" class="btn btn-secondary">Cancelar</button><!---El tipo submit es el q recarga la pag y envia los datos-->
+                        &nbsp;
+                        <button type="submit" id="btnEnviar" class="btn btn-primary">Enviar</button><!--El tipo submit es el q recarga la pag y envia los datos-->
+                    </div>
+                </form>
 
-        </form>
-
-        {{mensaje}}
-                </div>
+                {{mensaje}}
             </div>
-
         </div>
-    </div>
-
-        <table id="tablacontactos">
-
-        </table>
-<br>
-<br>
+</section>
 
 {% endblock %}
