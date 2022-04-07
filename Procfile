@@ -1,1 +1,1 @@
-web: gunicorn Y_Zone.wsgi
+web: gunicorn Y_Zone.wsgi --log-file -
