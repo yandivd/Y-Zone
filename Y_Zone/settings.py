@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dropbox
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -164,3 +165,23 @@ PWA_APP_ICONS_APPLE = [
         "sizes": '160x160'
     }
 ]
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+# The absolute path to the directory where collectstatic will collect static files for deployment.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+#dropbox
+
+DROPBOX_OAUTH2_TOKEN = 'U14eIr9d8roAAAAAAAAAAXVs9MsVFg1pWLLo5NuxD5oYoqNKJvN1yo8qjYyH1hOi'
+DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+
+
+dbx = dropbox.Dropbox (DROPBOX_OAUTH2_TOKEN)
+DROPBOX_ROOT_PATH = '/media/'
