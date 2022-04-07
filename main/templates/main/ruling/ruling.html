@@ -25,7 +25,7 @@
 
 {%block content%}
 <div class="card my-5 container">
-    <card class="card-body">
+    <card class="card-body overflow-auto">
         <h2>Listado de Reglas</h2>
         <hr>
         <table class="table table-striped table-hover rable-responsive-sm">
@@ -37,7 +37,8 @@
             {% for i in entity %}
             <tr>
                 <td class="ellipsis" style="max-width: 350px;">
-                    <a href="{% url 'regla_info' i.id %}" class="text-decoration-none text-bold" >{{i.nombre}}</a></td>
+                    <a href="{% url 'regla_info' i.id %}" class="text-decoration-none text-bold" >{{i.nombre}}</a>
+                </td>
                 <td class="ellipsis" style="max-width: 350px;">{{i.descripcion}}</td>
                 <td>
                     {% if perms.app.change_ruling %}
