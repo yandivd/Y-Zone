@@ -185,9 +185,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #dropbox
 
-#DROPBOX_OAUTH2_TOKEN = 'sl.BFT0qqc_znToq3rtNZ0P9F-1k-_UTHzcq-sQLJQJiSn5Q2lLpEqgabwaJhvsnxCFdsorG6bJXr9Zkml1OviszbndDd2kGMh7mOkC6TCAzmxAytw7lCrrNYZzERIaMY3SODkMyEDc2w9b'
-#DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+DROPBOX_OAUTH2_TOKEN = 'sl.BFTNclUodAhdglRa_1X-lYh-jXYFqmXOHCRw_uVbWvkDH5gVMjvOjBYiwDt4q9V-o_FhhEnOfOFpI3pBp284u_Ic5UbpyfT4IKSAf8dEZ0RUbE40sZFG5HT08BbJhxMu98cx5CfQ16Qx'
+DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 
 
-#dbx = dropbox.Dropbox (DROPBOX_OAUTH2_TOKEN)
-#DROPBOX_ROOT_PATH = '/media/'
+dbx = dropbox.Dropbox (DROPBOX_OAUTH2_TOKEN)
+DROPBOX_ROOT_PATH = '/media/'
