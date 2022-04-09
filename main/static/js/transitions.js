@@ -49,3 +49,11 @@ sr.reveal('.estadistic-info-2', {
     origin: 'top',
     distance: '-50px',
 })
+
+// About us section
+
+sr.reveal('.social-networks', {
+    duration: 1000,
+    origin: 'top',
+    distance: '-50px',
+})
