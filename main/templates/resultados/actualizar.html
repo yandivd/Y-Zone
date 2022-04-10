@@ -24,40 +24,25 @@
         }
     </script>
 
-<br>
-<br>
-
-        <div class="row">
-            <div class="col-12 col-md-6 offset-md-3">
-                <div class="card">
-    <div class="card-body">
-        <h2>Resultados del Torneo</h2>
-        <a href="#" onclick="reiniciar()" class="bi bi-arrow-repeat"> Reiniciar todos los Datos del Ranking</a>
-        <hr>
-        <h5 style="color:#FF0000">{{mensaje}}</h5>
-        <hr>
-                <form action="" method="post" enctype="multipart/form-data">
-
-                    {%csrf_token%}
-                    {{form | crispy}}
-                    <div class="d-flex justify-content-end">
-
-                        <input type="reset" value="Cancelar" class="btn btn-secundary">
-                        &nbsp;
-
-                        <input type="submit" value="Actualizar" class="btn btn-success">
-
-
-                    </div>
-
-                </form>
-            </div>
+<div class="container d-flex justify-content-center my-2">
+    <div class="card" style="width: 700px;">
+        <div class="card-body">
+            <h2>Resultados del Torneo</h2>
+            <a href="#" onclick="reiniciar()" class="bi bi-arrow-repeat"> Reiniciar todos los Datos del Ranking</a>
+            <hr>
+            <h5 style="color:#FF0000">{{mensaje}}</h5>
+            <hr>
+            <form action="" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+                {{form | crispy}}
+                <div class="d-flex justify-content-end mt-2">
+                    <input type="reset" value="Cancelar" class="btn btn-secundary">
+                    &nbsp;
+                    <input type="submit" value="Actualizar" class="btn btn-success">
+                </div>
+            </form>
         </div>
-
-
     </div>
 </div>
-<br>
-<br>
 
 {% endblock %}
