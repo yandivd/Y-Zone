@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -185,15 +185,20 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# The URL to use when referring to static files (where they will be served from)
+MEDIA_URL = '/media/'
+
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #dropbox
-
-DROPBOX_OAUTH2_TOKEN = 'U14eIr9d8roAAAAAAAAAAXVs9MsVFg1pWLLo5NuxD5oYoqNKJvN1yo8qjYyH1hOi'
-DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
-
-
-dbx = dropbox.Dropbox (DROPBOX_OAUTH2_TOKEN)
-DROPBOX_ROOT_PATH = '/media/'
+#
+# DROPBOX_OAUTH2_TOKEN = 'U14eIr9d8roAAAAAAAAAAXVs9MsVFg1pWLLo5NuxD5oYoqNKJvN1yo8qjYyH1hOi'
+# DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+#
+#
+# dbx = dropbox.Dropbox (DROPBOX_OAUTH2_TOKEN)
+# DROPBOX_ROOT_PATH = '/media/'
