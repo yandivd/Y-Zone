@@ -64,23 +64,23 @@ def actualizar_resultados(request):
             lista_jug_no_oblig=[]
             try:
                 jugador=Duelista.objects.get(nombre=p1)
-                jugador.ptos+=8
+                jugador.ptos+=15
                 jugador.torneos_ganados+=1
                 jugador.torneos_clasificados+=1
                 lista_jug.append(jugador)
 
                 jugador=Duelista.objects.get(nombre=p2)
-                jugador.ptos+=7
+                jugador.ptos+=11
                 jugador.torneos_clasificados += 1
                 lista_jug.append(jugador)
 
                 jugador = Duelista.objects.get(nombre=p3)
-                jugador.ptos += 6
+                jugador.ptos += 8
                 jugador.torneos_clasificados += 1
                 lista_jug.append(jugador)
 
                 jugador = Duelista.objects.get(nombre=p4)
-                jugador.ptos += 5
+                jugador.ptos += 6
                 jugador.torneos_clasificados += 1
                 lista_jug.append(jugador)
             except:
