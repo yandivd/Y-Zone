@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#!/home/yandivd/Projects/Personales/Y-Zone/venv/bin/python3
-=======
-#!/home/vargastech/VargasTechnology/venv/bin/python3
->>>>>>> 908c02f (act)
+#!/home/vargastech/Y-Zone/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
